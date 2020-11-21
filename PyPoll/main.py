@@ -1,10 +1,18 @@
 import os
 
-csvpath = os.path.join('Resources', 'election_data')
+#csvpath = os.path.join("Resources/election_data")
 
 import csv
 
-with open(csvpath, newline='') as csvfile:
-    csvreader = csv.reader(csvfile, delimiter='')
+csvpath = os.path.join("PyPoll", "Resources", "election_data.csv")
 
-print(csvreader)
+
+with open(csvpath) as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=',')
+
+    for row in csvreader:
+        print(len(row))
+        # print(len(list(row))) 'printed count of data in each line
+
+
+
